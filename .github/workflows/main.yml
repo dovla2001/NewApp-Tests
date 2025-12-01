@@ -22,10 +22,13 @@ jobs:
           dotnet-version: 9.0.x
 
       - name: Restore dependencies
-        run: dotnet restore
+        # Traži sve .csproj fajlove u svim poddirektorijumima
+        run: dotnet restore **/*.csproj
 
       - name: Build solution
-        run: dotnet build --no-restore
+        # Gradi glavni projekat
+        run: dotnet build MyApp/MyApp.csproj --no-restore
 
       - name: Run tests
-        run: dotnet test --no-build --verbosity normal
+        # Pokreće testove iz test projekta
+        run: dotnet test MyApp.Tests/MyApp.Tests.csproj --no-build --verbosity normal
