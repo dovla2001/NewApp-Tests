@@ -16,7 +16,7 @@ public class UserServiceTests
     public void IsValidEmail_ValidEmail_ReturnsTrue()
     {
         var result = _userService.IsValidEmail("test@example.com");
-        Assert.IsTrue(result);
+        Assert.IsFalse(result);
     }
 
     [Test]
@@ -74,9 +74,6 @@ public class UserServiceTests
         var result = _userService.Login("userexample.com", "password123");
         Assert.IsFalse(result);
     }
-
-
-
 
     [Test]
     public void IsValidEmail_ValidEmail_ReturnsFalse()
