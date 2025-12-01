@@ -23,7 +23,7 @@ jobs:
 
       - name: Restore dependencies
         # Traži sve .csproj fajlove u svim poddirektorijumima
-        run: dotnet restore **/*.csproj
+        run: dotnet restore .
 
       - name: Build solution
         # Gradi glavni projekat
