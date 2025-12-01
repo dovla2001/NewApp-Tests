@@ -22,13 +22,10 @@ jobs:
           dotnet-version: 9.0.x
 
       - name: Restore dependencies
-        # Traži sve .csproj fajlove u svim poddirektorijumima
-        run: dotnet restore .
+        run: dotnet restore MyApp/MyApp.sln # Korišćenje .sln
 
       - name: Build solution
-        # Gradi glavni projekat
-        run: dotnet build MyApp/MyApp.csproj --no-restore
+        run: dotnet build MyApp/MyApp.sln --no-restore # Korišćenje .sln
 
       - name: Run tests
-        # Pokreće testove iz test projekta
-        run: dotnet test MyApp.Tests/MyApp.Tests.csproj --no-build --verbosity normal
+        run: dotnet test MyApp/MyApp.sln --no-build --verbosity normal # Korišćenje .sln
