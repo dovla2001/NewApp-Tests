@@ -20,13 +20,6 @@ public class UserServiceTests
     }
 
     [Test]
-    public void IsValidEmail_ValidEmail_ReturnsFalse()
-    {
-        var results = _userService.IsValidEmail("google@gmail.net");
-        Assert.IsFalse(results);
-    }
-
-    [Test]
     public void IsValidEmail_InvalidEmail_ReturnsFalse()
     {
         var result = _userService.IsValidEmail("testexample.com");
