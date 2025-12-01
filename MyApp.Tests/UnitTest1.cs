@@ -74,4 +74,14 @@ public class UserServiceTests
         var result = _userService.Login("userexample.com", "password123");
         Assert.IsFalse(result);
     }
+
+
+
+
+    [Test]
+    public void IsValidEmail_ValidEmail_ReturnsFalse()
+    {
+        var results = _userService.IsValidEmail("google@gmail.net");
+        Assert.IsFalse(results);
+    }
 }
